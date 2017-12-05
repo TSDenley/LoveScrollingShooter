@@ -163,14 +163,22 @@ end -- love.update()
 
 
 function love.draw(dt)
-  -- Render player assets
 	if isAlive then
+		-- Render player
 		love.graphics.draw(player.img, player.x, player.y)
+    -- Score counter
+		love.graphics.print('Score: ' .. score, 10, 10)
 	else
+    -- Game over message
 		love.graphics.print(
 			'Press "R" to restart',
 			love.graphics:getWidth() / 2 - 50,
 			love.graphics:getHeight() / 2 - 10
+		)
+		love.graphics.print(
+			'Score: ' .. score,
+			love.graphics:getWidth() / 2 - 20,
+			love.graphics:getHeight() / 2 + 20
 		)
 	end
 
