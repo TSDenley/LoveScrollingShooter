@@ -39,7 +39,7 @@ function love.load(arg)
 	player.img = love.graphics.newImage('assets/Aircraft_04.png')
 	bulletImg = love.graphics.newImage('assets/bullet_2_orange.png')
   -- Enemy assets
-	enemyImg = love.graphics.newImage('assets/Aircraft_06.png')
+	enemyImg = love.graphics.newImage('assets/Aircraft_06_r.png')
 end
 
 
@@ -189,13 +189,6 @@ function love.draw(dt)
 
   -- Render spawned enemies
 	for i,enemy in ipairs(enemies) do
-		love.graphics.draw(
-			enemy.img,
-			enemy.x, enemy.y, -- Position
-			math.pi, -- Rotate enemies so they face the player
-			1, 1, -- Scale
-			enemy.img:getWidth() / 2,
-			enemy.img:getHeight() / 2 -- Origin offset (rotate around centre)
-		 )
+		love.graphics.draw(enemy.img, enemy.x, enemy.y)
 	end
 end
